@@ -1,0 +1,38 @@
+{
+  "env": {
+    "targets": {
+      "electron": "12",
+      "node": "14"
+    }
+  },
+  "jsc": {
+    "minify": {
+      "compress": {
+        "unused": true
+      },
+      "mangle": true
+    },
+    "parser": {
+      "syntax": "typescript",
+      "target": "es2019",
+      "decorators": true,
+      "dynamicImport": true
+    },
+    "transform": {
+      "legacyDecorator": true,
+      "decoratorMetadata": true
+    },
+    "target": "es2019",
+    "keepClassNames": false,
+    "loose": false
+  },
+  "module": {
+    "type": "commonjs",
+    "strict": true,
+    "strictMode": true,
+    "lazy": false,
+    "noInterop": true
+  },
+  "sourceMaps": "inline",
+  "minify": true
+}

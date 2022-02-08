@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.17e50649.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <script src="/bootstrap/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="/bootstrap/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+
+  <title>book-format(viewer)</title>
+  <script type="module" crossorigin src="/assets/index.c6ab5f17.js"></script>
+    <link rel="stylesheet" href="/assets/index.891eee33.css">
+  </head>
+
+<body>
+  <div id="app">
+    <ul class="nav nav-tabs sticky-top" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="select-tab" data-bs-toggle="tab" data-bs-target="#select" type="button" role="tab"
+          aria-controls="select" aria-selected="true">select</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="read-tab" data-bs-toggle="tab" data-bs-target="#read" type="button" role="tab"
+          aria-controls="read" aria-selected="false">read</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="find-tab" data-bs-toggle="tab" data-bs-target="#find" type="button" role="tab"
+          aria-controls="find" aria-selected="false">find</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="setting-tab" data-bs-toggle="tab" data-bs-target="#setting" type="button" role="tab"
+          aria-controls="setting" aria-selected="false">setting</button>
+      </li>
+    </ul>
+    <div class="container-fluid">
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="select" role="tabpanel" aria-labelledby="select-tab">
+          <div id="selectRoot" class="roots">
+            <div class="row">
+              <div class="col-xs-0 col-sm-1 col-md-3 "></div>
+              <div class="col-xs-12 col-sm-10 col-md-6">
+                <div class="selectBook">
+                  <div class="input-group mb-5">
+                    <div>
+                      <label for="bookFile" class="form-label">File</label>
+                      <input class="form-control" type="file" id="bookFile">
+                    </div>
+                  </div>
+                  <div class="input-group mb-5">
+                    <div>
+                      <label for="encoding" class="form-label">Encoding</label>
+                      <select class="form-select" aria-label="Disabled select example" id="encoding" disabled>
+                        <option selected>Auto</option>
+                        <option value="1">utf-8</option>
+                        <option value="2">utf-16</option>
+                        <option value="3">big-5</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="input-group mb-5">
+                    <div>
+                      <input class="form-check-input" type="checkbox" id="translate">
+                      <label class="form-check-label" for="translate">transalte to zh-tw</label>
+
+                    </div>
+                  </div>
+                  <div class="input-group mb-5">
+                    <div>
+                      <label class="form-check-label" for="version">Version</label>
+                      <select class="form-select" aria-label="Default select example" id="version" disabled>
+                        <option selected>Auto</option>
+                        <option value="1">1.0.0</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="input-group mb-5">
+                    <button type="button" class="btn btn-secondary" id="selectSubmit">Submit</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="read" role="tabpanel" aria-labelledby="read-tab">
+          <div id="readRoot" class="roots">
+            <h3><span id="textin-title">textin-title</span></h3>
+            <h4><span id="textin-chatpertitle">textin-chatpertitle</span></h4>
+            <p><span id="textin-content">textin-content</span></p>
+            <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+              <div class="btn-group" role="group" aria-label="First group">
+                <button type="button" class="btn btn-outline-secondary" id="previousChapter">Previous</button>
+                <button type="button" class="btn btn-outline-secondary" id="nextChapter">Next</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="find" role="tabpanel" aria-labelledby="find-tab">
+          <div id="findRoot" class="roots">
+            <h4><span id="textin-title">textin-title</span></h4>
+            <span id="htmlin-chapterlist">
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-action active" aria-current="true" id="selectChapter1">Chatper 1</li>
+                <li class="list-group-item list-group-item-action" id="selectChapter2">Chatper 2</li>
+                <li class="list-group-item list-group-item-action">Chatper other</li>
+                <li class="list-group-item list-group-item-action">Chatper other</li>
+                <li class="list-group-item list-group-item-action">Chatper other</li>
+              </ul>
+            </span>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="setting" role="tabpanel" aria-labelledby="setting-tab">
+          <h3>Setting</h3>
+          <h4>Theme</h4>
+          <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked disabled>
+            <label class="btn btn-outline-primary" for="btnradio1">light</label>
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" disabled>
+            <label class="btn btn-outline-primary" for="btnradio2">dark</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
+
+</body>
+
+</html>
